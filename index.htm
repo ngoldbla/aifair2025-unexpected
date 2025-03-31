@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="viewport-fit=cover, width=device-width, height=device-height, initial-scale=1" />
+<link rel="stylesheet" href="engine/main.css">
+<link rel="stylesheet" href="theme/copenhagen.css">
+<link rel="stylesheet" href="engine/katex/katex.min.css">
+<style>
+:root{
+--logo: /assets/1.png;
+--darkaccent1color: #E1EBE3;
+--lightaccent1color: #6E9075;
+--accent2: #43aa8b;
+--accent3: #f9c74f;
+--accent4: #90be6d;
+--accent5: #f8961e;
+--accent6: #577590;
+--lighttitletextcolor: #ffffffe6;
+--darktitletextcolor: #000000b3;
+--lightbodytextcolor: #ffffffe6;
+--darkbodytextcolor: #000000b3;
+--lightbackgroundcolor: transparent;
+--darkbackgroundcolor: transparent;
+--bodyfont: Albert Sans;
+--titlefont: Albert Sans;
+--lightframecolor: #FFFFFF;
+--darkframecolor: #000000;
+} 
+
+</style>
+</head>
+<body class="responsive">
+<div class="reveal">
+<div class="slides">
+<section class="variable-size-headings dark v-split-container responsive present fit-warning has-light-background fitted" data-background-color="#6e9075" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.578rem;">
+        <div style=""><h1 id="investigatingtheunexpected">Investigating the Unexpected</h1>
+
+<h2 id="methodsformanagingunstructuredinformationforresearch">Methods for Managing Unstructured Information for Research</h2>
+
+<p>Dylan Goldblatt, Ph.D.</p>
+
+<p>Kennesaw State University</p></div>
+        <figure style=""><img src="images/ChatGPT%20Image%20Mar%2028,%202025%20at%2009_45_31%20PM.png" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-light-background fitted" data-background-color="#6e9077" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="questionsattheoutset">Questions at the Outset</h2>
+
+<ul>
+<li>What is unstructured data?</li>
+<li>How can it be made more analyzable?</li>
+<li>Which sources might yield insights?</li>
+<li>Which workflows and tools might be used?</li>
+<li>Where can unstructured data enhance research impact?</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-light-background fitted" data-background-color="#6e917a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.672rem;">
+        <div style=""><h2 id="aboutme">About Me</h2>
+
+<ul>
+<li>Cognitive linguist working at intersection of computational methods and interdisciplinary research</li>
+<li>Project experience with handwriting classification, audio processing, natural language processing, transformers-based translation, transcription, and speech synthesis</li>
+<li>Developer of software tooling to support research projects and project administration</li>
+<li>Interested in human-centered computing and "calm technology"</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-light-background fitted" data-background-color="#6e927c" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/bill_mcdonald_john_miller_06_inline-2.jpg" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark full-image-container responsive present has-light-background fitted" data-background-color="#6e937f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/STScI-01EVT0D84TN7MWYRDHSG3TKWPN.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark full-image-container responsive present has-light-background fitted" data-background-color="#6e9481" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/historical-cost-of-computer-memory-and-storage.svg" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-light-background fitted" data-background-color="#6e9484" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="todaysjourney">Today's Journey</h2>
+
+<ol>
+<li>Understanding unstructured information in academic contexts</li>
+<li>Strategies for data preparation and management</li>
+<li>Analytical techniques and structure extraction</li>
+<li>Case Studies in Unstructured Data Analysis Applications</li>
+<li>Implementation framework for your research</li>
+<li>Discussion and Q&amp;A</li>
+</ol></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark cover-container responsive present has-light-background fitted" data-background-color="#6e9586" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h1 id="1.understandingunstructuredinformationinacademiccontexts">1. Understanding unstructured information in academic contexts</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-light-background fitted" data-background-color="#6e9689" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/data%20structure%20spectrum.png" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-light-background fitted" data-background-color="#6d958a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.625rem;">
+        <div style=""><h2 id="commonacademicsources">Common Academic Sources</h2>
+
+<ul>
+<li>Research materials: journal articles, dissertations, field notes</li>
+<li>Institutional documents: policies, meeting minutes, correspondence</li>
+<li>Educational content: lecture recordings, discussion forums, assignments</li>
+<li>Social data: campus social media, student feedback, community engagement</li>
+<li>Multimedia resources: research videos, promotional materials, event recordings</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-light-background fitted" data-background-color="#6c918a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Screenshot%202025-03-27%20at%2011.22.09%E2%80%AFPM.png" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark v-split-container responsive present has-light-background fitted" data-background-color="#6b8c8a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/51ztqxSRoWL._AC_UF1000,1000_QL80_.jpg" class=" size-contain position-center-center"></figure>
+        <figure style=""><img src="images/Martens_Promise_of_Memory%20(dragged).png" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark v-split-container responsive present has-dark-background fitted" data-background-color="#6a888a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="fromwordstomeaning">From Words to Meaning</h3>
+
+<ul>
+<li>Topic Modeling</li>
+<li>Keyword Extraction</li>
+<li>Semantic Networks</li>
+<li>Word Embeddings</li>
+<li>Ontology Development</li>
+</ul></div>
+        <figure style=""><img src="images/91lERPfJ2eL._SL1500_.jpg" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-dark-background fitted" data-background-color="#6a838a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.391rem;">
+        <div style=""><h3 id="metaphoridentificationprocedurepragglejazgroup2007">Metaphor Identification Procedure (Pragglejaz Group, 2007)</h3>
+
+<ol>
+<li>Read the entire text–discourse to establish a general understanding of the meaning.</li>
+<li>Determine the lexical units in the text–discourse</li>
+<li><p>(a) For each lexical unit in the text, establish its meaning in context, that is, how it applies to an entity, relation, or attribute in the situation evoked by the text (contextual meaning). Take into account what comes before and after the lexical unit.</p>
+
+<p>(b) For each lexical unit, determine if it has a more basic contemporary meaning in other contexts than the one in the given context. For our purposes, basic meanings tend to be</p>
+
+<p>—More concrete; what they evoke is easier to imagine, see, hear, feel, smell, and taste.</p>
+
+<p>—Related to bodily action.</p>
+
+<p>—More precise (as opposed to vague)</p>
+
+<p>—Historically older.</p>
+
+<p>Basic meanings are not necessarily the most frequent meanings of the lexical unit.</p>
+(c) If the lexical unit has a more basic current–contemporary meaning in other contexts than the given context, decide whether the contextual meaning contrasts with the basic meaning but can be understood in comparison with it.</li>
+<li>If yes, mark the lexical unit as metaphorical.</li>
+</ol></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-dark-background fitted" data-background-color="#697f89" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/IMG_4269.jpeg" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#687b89" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="datavisualization">Data Visualization</h3>
+
+<ul>
+<li>datavizproject.com</li>
+<li>data.europa.eu/apps/</li>
+<li>julius.ai</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-dark-background fitted" data-background-color="#677689" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/17727.jpeg" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#667289" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.859rem;">
+        <div style=""><h2 id="hiddenopportunities">Hidden Opportunities</h2>
+
+<ul>
+<li>Rich contextual information</li>
+<li>Qualitative insights</li>
+<li>Emergent patterns</li>
+<li>Temporal developments</li>
+<li>Network relationships</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark cover-container responsive present has-dark-background fitted" data-background-color="#666e87" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="2.strategiesfordatapreparationmanagement">2. Strategies for Data Preparation &amp; Management</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#666a84" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>The Data Preparation Pipeline</p>
+<div class="single-image-wrapper"><figure><img src="images/archetype-llm-batch-use-case-high-level-batch.png.webp" class=" size-contain position-center-center"></figure></div>
+
+<p><a href="https://dottxt-ai.github.io/outlines/latest/cookbook/">https://dottxt-ai.github.io/outlines/</a> </p></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-dark-background fitted" data-background-color="#666681" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h3 id="datacleaningfundamentals">Data Cleaning Fundamentals</h3>
+
+<ul>
+<li>Text normalization (case standardization, punctuation handling)</li>
+<li>Noise reduction (removing irrelevant elements)</li>
+<li>Deduplication (identifying and handling redundant information)</li>
+<li>Format standardization (converting between file types)</li>
+<li>Language processing (handling multilingual content)</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-dark-background fitted" data-background-color="#66627e" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/GSC_DEFA_main-page_image-p2e07337asuq179fjj31v40q63fz357gaz34ldn4io.jpg" class=" position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-dark-background fitted" data-background-color="#665e7c" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="commonresearchchallengesandstrategies">Common Research Challenges and Strategies</h2>
+
+<ul>
+<li>Limited technical expertise</li>
+<li>Integration with existing methods</li>
+<li>Publication barriers</li>
+<li>Resistance from colleagues</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#665a79" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="metadataforcontext">Metadata for Context</h3>
+
+<ul>
+<li>Descriptive metadata</li>
+<li>Structural metadata</li>
+<li>Administrative metadata</li>
+<li>Technical metadata</li>
+<li>Provenance metadata</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#665676" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="storageconsiderations">Storage Considerations</h3>
+
+<ul>
+<li>Scalability</li>
+<li>Accessibility</li>
+<li>Security</li>
+<li>Integration</li>
+<li>Preservation</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#665273" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h3 id="creatingstructuredoutput">Creating Structured Output</h3>
+
+<ul>
+<li>Data Extraction</li>
+<li>Taxonomy Development</li>
+<li>Knowledge Graph Construction</li>
+<li>Structured Metadata Generation</li>
+<li>Standardized Reporting</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-dark-background fitted" data-background-color="#664f71" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.719rem;">
+        <div style=""><h2 id="generalistrepositories">Generalist Repositories</h2>
+
+<ul>
+<li><strong>dataone.org</strong>: sponsored by NSF DataNet</li>
+<li><strong>figshare.com</strong>: NIH-linked research repository</li>
+<li><strong>zenodo.org</strong>: open, backups at CERN, Github</li>
+<li><strong>datadryad.org</strong>: only for CC0 Public Domain</li>
+<li><strong>digitalcommons.kennesaw.edu</strong>: Hosts and archives KSU faculty and student research data and outputs, including: articles, manuscripts, proceedings from conferences, and community projects.</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark cover-container responsive present has-dark-background fitted" data-background-color="#674f6f" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="3.analyticaltechniquesandstructureextraction">3. Analytical Techniques and Structure Extraction</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#684f6e" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="creatingadocumentprocessingframework">Creating a Document Processing Framework</h3>
+<div class="single-image-wrapper"><figure><img src="images/document%20pipeline%20docsumo.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-dark-background fitted" data-background-color="#6a506d" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/ShakespeareTragedyNodes.pdf" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#6b506c" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>Transforming Unstructured Sources</p>
+<div class="single-image-wrapper"><figure><img src="images/explain4-CPLfQrjf.webp" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#6c506b" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.906rem;">
+        <div style=""><h3 id="naturallanguageprocessing">Natural Language Processing</h3>
+
+<ul>
+<li>Part-of-speech tagging</li>
+<li>Named entity recognition (NER)</li>
+<li>Dependency parsing</li>
+<li>Coreference resolution</li>
+<li>Tokenization</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-dark-background fitted" data-background-color="#6e516a" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Screenshot%202025-03-31%20at%2012.02.24%E2%80%AFAM.png" class=" size-contain position-center-center"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark section-container responsive present fit-warning has-dark-background fitted" data-background-color="#6f5168" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-section" style="width: 100%; font-size: 0.391rem;">
+        <div style="">
+          <h3 id="foundationmodelcapabilitiesonhuggingface">Foundation Model Capabilities on Hugging Face</h3>
+
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+
+<thead>
+<tr>
+	<th><strong>Natural Language Processing</strong></th>
+	<th><strong>Audio</strong></th>
+	<th><strong>Computer Vision</strong></th>
+	<th><strong>Multimodal</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>- Table Classification <br>- Token Classification <br>- Text Classification <br>- Table Question Answering <br>- Zero-Shot Classification <br>- Question Answering <br>- Summarization <br>- Text Generation <br>- Fill-Mask <br>- Text2Text Generation <br>- Feature Extraction <br>- Text Ranking</td>
+	<td>- Text-to-Speech <br>- Automatic Speech Recognition <br>- Audio Classification <br>- Text-to-Audio <br>- Audio-to-Audio <br>- Voice Activity Detection</td>
+	<td>- Image Classification <br>- Object Detection <br>- Image Segmentation <br>- Video Classification <br>- Image-to-Text <br>- Image Generation <br>- Unconditional Image Generation <br>- Zero-Shot Image Classification <br>- Depth Estimation <br>- Image-to-Image <br>- Super Resolution <br>- Image Restoration <br>- Image Classification Explanation <br>- Document Question Answering</td>
+	<td>- Text-to-Text <br>- Image-Text-to-Text <br>- Visual Question Answering <br>- Document Question Answering <br>- Visual Document Retrieval <br>- Any-to-Any</td>
+</tr>
+</tbody>
+</table>
+        </div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark cover-container responsive present has-dark-background fitted" data-background-color="#715167" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h1 id="4.casestudiesinunstructureddataanalysisapplications">4. Case Studies in Unstructured Data Analysis Applications</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present fit-warning has-dark-background fitted" data-background-color="#725267" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 0.344rem;">
+        <div style=""><table>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Project</th>
+	<th>Unstructured Data</th>
+	<th>Techniques &amp; Tools</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td><strong>U Illinois</strong> <br> (Brown Dog)</td>
+	<td><em>Images, audio, video, documents</em> (various legacy files, “dark data”)</td>
+	<td>File format converters (DAP); content-based search &amp; metadata extraction (DTS); web services integrating OCR, format translation, etc.</td>
+</tr>
+<tr>
+	<td><strong>UW–Madison</strong> <br> (GeoDeepDive)</td>
+	<td><em>Text, figures, tables</em> from 18M+ scholarly articles (PDF/PubMed)</td>
+	<td>Natural language processing (entity tagging, parsing); OCR for scanned docs; custom text-mining applications via an API</td>
+</tr>
+<tr>
+	<td><strong>CMU &amp; Georgetown</strong> <br> (Six Degrees of Francis Bacon)</td>
+	<td><em>Textual biographies</em> (Oxford DNB historical entries)</td>
+	<td>Named Entity Recognition (Stanford NLP, LingPipe – combined 85% recall); graph learning via Poisson Graphical Lasso for relationship inference; expert validation of results</td>
+</tr>
+<tr>
+	<td><strong>Library of Congress &amp; UW</strong> <br> (Newspaper Navigator)</td>
+	<td><em>Images + text</em> from 16 million newspaper pages (OCR’d)</td>
+	<td>Deep learning visual content recognition (Faster R-CNN) to detect photos, cartoons, ads, maps, etc.; OCR text alignment for captions; image embeddings for similarity search</td>
+</tr>
+<tr>
+	<td><strong>Northeastern</strong> <br> (Telegram Extremism Study)</td>
+	<td><em>Social media posts:</em> images + text from Telegram channel</td>
+	<td>Cloud Vision API labels + K-means clustering for image themes; spaCy NER and Gensim LDA for text topics; statistical regression analysis (views vs content features)</td>
+</tr>
+<tr>
+	<td><strong>Stanford</strong> <br> (CheXpert)</td>
+	<td><em>Clinical narratives</em> (radiology reports) + images (X-rays)</td>
+	<td>Rule-based NLP pipeline (dictionary matching, negation detection) to label 14 conditions per report; produced labels for &gt;220k X-ray images; used labels to train CNN diagnostic models</td>
+</tr>
+</tbody>
+</table></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark v-split-container responsive present has-dark-background fitted" data-background-color="#735567" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="browndog">Brown Dog</h2></div>
+        <figure style=""><img src="images/BD3a_3D.png.webp" class=" size-contain position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark v-split-container responsive present fit-warning has-dark-background fitted" data-background-color="#745767" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.766rem;">
+        <div style=""><h2 id="geodeepdive">GeoDeepDive</h2></div>
+        <figure style=""><img src="images/Screenshot%202025-03-29%20at%201.46.24%E2%80%AFAM.png" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark v-split-container responsive present has-dark-background fitted" data-background-color="#755967" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="sixdegreesoffrancisbacon">Six Degrees of Francis Bacon</h2></div>
+        <figure style=""><img src="images/Screenshot%202025-03-29%20at%201.47.48%E2%80%AFAM.png" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark v-split-container responsive present has-dark-background fitted" data-background-color="#775c67" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 0.813rem;">
+        <div style=""><h1 id="newspapernavigator">Newspaper Navigator</h1></div>
+        <figure style=""><img src="images/nnavigator-logo-cropped.jpg" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#785e67" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="telegramextremismstudy">Telegram Extremism Study</h3>
+<div class="single-image-wrapper"><figure><img src="images/Screenshot-2023-09-12-at-15.05.23.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark v-split-container responsive present has-dark-background fitted" data-background-color="#796067" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-v-split media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="chexpert">CheXpert</h2></div>
+        <figure style=""><img src="images/CheXpert-0000002920-2f0a0950_fCtVCsz.jpg" class=" position-center-center"></figure>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark cover-container responsive present has-dark-background fitted" data-background-color="#7a6267" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 0.953rem;">
+        <div style=""><h1 id="5.implementationframeworkforyourresearch">5. Implementation Framework for your Research</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark title-container responsive present has-dark-background fitted" data-background-color="#7b6567" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-title" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="researchplanning">Research Planning</h2>
+
+<h3 id="unstructureddata">Unstructured Data</h3></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#7b6666" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h2 id="keytechniques">Key Techniques</h2>
+
+<ul>
+<li>Document classification</li>
+<li>Clustering</li>
+<li>Complex pattern recognition</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark full-image-container responsive present has-dark-background fitted" data-background-color="#7b6866" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-full-image media-grid" style="width: 100%; font-size: 1rem;">
+        <figure style=""><img src="images/Geneformer.png" class=" position-center-top"></figure>
+        
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark grid-container responsive present has-dark-background fitted" data-background-color="#7b6965" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-1 media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>Book a Research Consultation</p>
+<div class="layout-grid media-grid grid-items-2"><figure><img src="images/1.png" class=" size-contain position-center-center"></figure><figure><img src="images/L2QR.png" class=" size-contain position-center-center"></figure></div>
+</div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#7b6a65" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>Join the AI Community for Research</p>
+<div class="single-image-wrapper"><figure><img src="images/L2QR-2.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#7b6b64" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>Internal Data Science Training </p>
+<div class="single-image-wrapper"><figure><img src="images/L2QR-3.png" class=" size-contain position-center-center"></figure></div></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark grid-container responsive present has-dark-background fitted" data-background-color="#7b6d64" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-grid grid-items-1 media-grid" style="width: 100%; font-size: 1rem;">
+        <div style=""><p>Join a KSU Research Community</p>
+<div class="layout-grid media-grid grid-items-2"><figure><img src="images/Picture1.png" class=" size-contain position-center-center"></figure><figure><img src="images/L2QR-4.png" class=" size-contain position-center-center"></figure></div>
+</div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+</section><section class="variable-size-headings dark cover-container responsive present fit-warning has-dark-background fitted" data-background-color="#7b6e63" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 0.531rem;">
+        <div style=""><h1 id="seedgrants">Seed Grants</h1>
+
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Kickstarter</th>
+	<th>Initiatives</th>
+	<th>Grand Challenges</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Up to $5,000</td>
+	<td>Up to $10,000</td>
+	<td>$100,000/year</td>
+</tr>
+<tr>
+	<td>1 Semester</td>
+	<td>1 Year</td>
+	<td>2 Years</td>
+</tr>
+<tr>
+	<td>Teams of ≥ 2 (at least 1 KSU faculty)</td>
+	<td>Teams of ≥ 2 KSU faculty</td>
+	<td>Teams of ≥ 3 KSU faculty</td>
+</tr>
+<tr>
+	<td>Potential Deliverables: publication, local exhibition/performance, small grant</td>
+	<td>Deliverable: grant with &gt;$100k in direct costs or other significant work (e.g., performance/exhibition with regional draw)</td>
+	<td>Deliverable: large-scale, grant of &gt;$1M in direct costs plus ≥ 2 team publications</td>
+</tr>
+<tr>
+	<td>Due April 10, 2025</td>
+	<td>Due April 15, 2025</td>
+	<td>Due April 17, 2025</td>
+</tr>
+</tbody>
+</table></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark default-container responsive present has-dark-background fitted" data-background-color="#7b6f63" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-default" style="width: 100%; font-size: 1rem;">
+        <div style=""><h3 id="keyresearchtakeaways">Key Research Takeaways</h3>
+
+<ul>
+<li>Hidden in plain sight</li>
+<li>Technical skills are a bonus</li>
+<li>Don't forget your roots</li>
+<li>Start small</li>
+<li>All-source data storytelling</li>
+</ul></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section><section class="variable-size-headings dark cover-container responsive present has-dark-background fitted" data-background-color="#7b7163" data-updated="true" style="display: grid;">
+
+      <div class="header"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      <div class="layout-cover" style="width: 100%; font-size: 1rem;">
+        <div style=""><h1 id="6.discussionandqa">6. Discussion and Q&amp;A</h1></div>
+      </div>
+      <div class="footnotes"></div>
+      <div class="footer"><div class="leading"></div><div class="middle"></div><div class="trailing"></div></div>
+      
+</section></div>
+</div>
+<script src="engine/index.js"></script>
+<script src="engine/pptxgen.min.js"></script>
+<script src="engine/pfill.js"></script>
+<script src="engine/published.js"></script>
+<script>
+Reveal.configure({
+progress:true,
+progress:true,
+dependencies: [
+  {
+    src: "engine/highlight.js",
+    sync: true,
+    callback: function () {
+      hljs.initHighlightingOnLoad();
+    },
+  },
+],
+});
+</script>
+</body>
+</html>
