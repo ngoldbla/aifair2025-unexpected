@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="engine/katex/katex.min.css">
 <style>
 :root{
---logo: /assets/1.png;
 --darkaccent1color: #E1EBE3;
 --lightaccent1color: #6E9075;
 --accent2: #43aa8b;
@@ -705,22 +704,10 @@
 </section></div>
 </div>
 <script src="engine/index.js"></script>
-<script src="engine/pptxgen.min.js"></script>
-<script src="engine/pfill.js"></script>
 <script src="engine/published.js"></script>
 <script>
 Reveal.configure({
-progress:true,
-progress:true,
-dependencies: [
-  {
-    src: "engine/highlight.js",
-    sync: true,
-    callback: function () {
-      hljs.initHighlightingOnLoad();
-    },
-  },
-],
+progress: true
 });
 </script>
 </body>
